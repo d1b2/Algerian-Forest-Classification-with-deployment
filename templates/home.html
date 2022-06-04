@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Fire/No Fire Prediction in Algerian Forest</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="month" placeholder="Month (6-9)" required="required" /><br>
+	<input type="text" name="Region" placeholder="Region (0,1)" required="required" /><br>
+    	<input type="text" name="Temperature" placeholder="Temperature(22-42)" required="required" /><br>
+	<input type="text" name="RH" placeholder="RelativeHumidity(21-90)" required="required" /><br>
+	<input type="text" name="Ws" placeholder="Windspeed(6-29)" required="required" /><br>
+	<input type="text" name="Rain" placeholder="Rain(0-16.8)" required="required" /><br>
+	<input type="text" name="FFMC" placeholder="FFMC(28.6-92.5)" required="required" /><br>
+	<input type="text" name="DMC" placeholder="DMC(1.1-65.9)" required="required" /><br>
+        <input type="text" name="DC" placeholder="DC(7-220.4)" required="required" /><br>
+        <input type="text" name="ISI" placeholder="ISI(0-18.5)" required="required" /><br>
+        <input type="text" name="BUI" placeholder="BUI(1.1-68)" required="required" /><br>
+	<input type="text" name="FWI" placeholder="FWI(0-31.1)" required="required" /><br>
+			
+       
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{prediction_text}}
+
+</body>
+</html>
